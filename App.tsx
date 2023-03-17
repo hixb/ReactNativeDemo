@@ -9,6 +9,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 
 import ClassView from './src/components/ClassView';
+import FuncView from './src/components/FuncView';
 
 function App(): JSX.Element {
   // const [showClassView, setShowClassView] = useState<boolean>(true);
@@ -22,6 +23,7 @@ function App(): JSX.Element {
       <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
       <View style={styles.container}>
         <ClassView name="zhangsan" age={12} level="top" />
+        <FuncView name={'list'} age={20} level={false} />
       </View>
     </SafeAreaView>
   );
