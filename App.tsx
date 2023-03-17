@@ -5,50 +5,33 @@
  * @format
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import ClassView from './src/components/ClassView';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [showClassView, setShowClassView] = useState<boolean>(true);
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  useEffect(() => {
+    setTimeout(() => setShowClassView(false), 2000);
+  }, []);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <View style={styles.container}>
-        <View style={styles.child}>
-          <Text>hello</Text>
-        </View>
-      </View>
+    <SafeAreaView>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
+      <View style={styles.container}>{showClassView && <ClassView />}</View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-  child: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#ccc',
+    backgroundColor: '#fff',
   },
 });
 
