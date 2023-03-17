@@ -5,22 +5,24 @@
  * @format
  */
 
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 
 import ClassView from './src/components/ClassView';
 
 function App(): JSX.Element {
-  const [showClassView, setShowClassView] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => setShowClassView(false), 2000);
-  }, []);
+  // const [showClassView, setShowClassView] = useState<boolean>(true);
+  //
+  // useEffect(() => {
+  //   setTimeout(() => setShowClassView(false), 2000);
+  // }, []);
 
   return (
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
-      <View style={styles.container}>{showClassView && <ClassView />}</View>
+      <View style={styles.container}>
+        <ClassView name="zhangsan" age={12} level="top" />
+      </View>
     </SafeAreaView>
   );
 }
