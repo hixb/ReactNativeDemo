@@ -10,6 +10,7 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
+  Text,
   useColorScheme,
   View,
 } from 'react-native';
@@ -30,7 +31,9 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <View style={styles.container}>
-        <View style={styles.child} />
+        <View style={styles.child}>
+          <Text>hello</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
