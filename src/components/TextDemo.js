@@ -4,7 +4,12 @@ import {Text, View, StyleSheet} from 'react-native';
 export default () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.text} numberOfLines={2} ellipsizeMode="tail">
+      <Text
+        style={styles.text}
+        numberOfLines={2}
+        ellipsizeMode="tail"
+        selectable={true}
+        selectionColor={'#666'}>
         hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈
       </Text>
     </View>
