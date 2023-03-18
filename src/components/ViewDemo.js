@@ -1,23 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 export default () => {
-  const [height, setHeight] = useState(100);
+  const viewRef = React.useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
-      setHeight(200);
-    }, 2000);
+      viewRef.current.setNativeProps({
+        style: {
+          backgroundColor: '#666',
+          width: 300,
+        },
+      });
+    }, 3000);
   }, []);
 
   return (
     <View style={styles.root}>
-      <View
-        style={[styles.subView, {height}]}
-        onLayout={e => {
-          console.log('subView onLayout', e.nativeEvent.layout.height);
-        }}
-      />
+      <View ref={viewRef} style={[styles.subView]} />
     </View>
   );
 };
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
   subView: {
     width: 100,
+    height: 100,
     backgroundColor: '#222',
   },
 });
