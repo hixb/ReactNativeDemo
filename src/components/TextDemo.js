@@ -17,9 +17,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'blue',
-    fontSize: 16,
-    textDecorationStyle: 'solid',
-    textDecorationLine: 'line-through',
-    textDecorationColor: 'red',
+    fontSize: 59,
+    textShadowColor: '#808080',
+    textShadowOffset: {width: 2, height: 4},
+    textShadowRadius: 8,
   },
 });
