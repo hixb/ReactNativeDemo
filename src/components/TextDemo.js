@@ -10,12 +10,9 @@ export default () => {
         ellipsizeMode="tail"
         selectable={true}
         selectionColor={'#666'}
-        onPress={() => {
-          console.log('onPress');
-        }}
-        onLongPress={() => {
-          console.log('onLongPress');
-        }}>
+        onPress={() => console.log('onPress')}
+        onLongPress={() => console.log('onLongPress')}
+        allowFontScaling={false}>
         hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈
       </Text>
     </View>
