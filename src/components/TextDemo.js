@@ -4,17 +4,7 @@ import {Text, View, StyleSheet} from 'react-native';
 export default () => {
   return (
     <View style={styles.root}>
-      <Text
-        style={styles.text}
-        numberOfLines={2}
-        ellipsizeMode="tail"
-        selectable={true}
-        selectionColor={'#666'}
-        onPress={() => console.log('onPress')}
-        onLongPress={() => console.log('onLongPress')}
-        allowFontScaling={false}>
-        hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈hello哈哈哈
-      </Text>
+      <Text style={styles.text}>person:11</Text>
     </View>
   );
 };
@@ -27,6 +17,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'blue',
-    fontSize: 30,
+    fontSize: 16,
+    textDecorationStyle: 'solid',
+    textDecorationLine: 'line-through',
+    textDecorationColor: 'red',
   },
 });
