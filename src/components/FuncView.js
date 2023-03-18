@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  ScrollView,
-  useWindowDimensions,
-  useColorScheme,
-} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
 
 export default props => {
   const {name, age, level} = props;
@@ -16,33 +10,22 @@ export default props => {
   // 获取ScrollView的ref
   const scrollViewRef = React.useRef(null);
 
-  // 获取屏幕宽高
-  const {width, height} = useWindowDimensions();
-  console.log(`width: ${width}, height: ${height}`);
+  React.useEffect(() => {}, []);
 
-  // 获取系统主题
-  const colorScheme = useColorScheme();
-  console.log(`colorScheme: ${colorScheme}`);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setAddress('USA');
-
-      // 滚动到底部且带动画
-      scrollViewRef.current?.scrollToEnd({animated: true});
-    }, 4000);
-  }, []);
-
-  React.useEffect(() => {
-    console.log(address);
-  }, [address]);
-
-  return (
-    <View style={{width: '100%', height: 200, backgroundColor: '#222'}}>
+  const renderProps = () => {
+    return (
       <Text style={{color: '#fff'}}>
         {`name: ${name}, age: ${age}, level: ${level}`}
       </Text>
-      <Text style={{color: 'red'}}>{address}</Text>
+    );
+  };
+
+  const renderAddress = () => {
+    return <Text style={{color: 'red'}}>{address}</Text>;
+  };
+
+  const renderList = () => {
+    return (
       <ScrollView ref={scrollViewRef}>
         <Text style={{color: 'yellow', marginVertical: 12}}>Aaa1</Text>
         <Text style={{color: 'yellow', marginVertical: 12}}>BBB</Text>
@@ -51,6 +34,14 @@ export default props => {
         <Text style={{color: 'yellow', marginVertical: 12}}>eee</Text>
         <Text style={{color: 'yellow', marginVertical: 12}}>fff</Text>
       </ScrollView>
+    );
+  };
+
+  return (
+    <View style={{width: '100%', height: 200, backgroundColor: '#222'}}>
+      {renderProps()}
+      {renderAddress()}
+      {renderList()}
     </View>
   );
 };
