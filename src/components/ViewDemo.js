@@ -4,11 +4,7 @@ import {View, StyleSheet} from 'react-native';
 export default () => {
   return (
     <View style={styles.root}>
-      <View style={styles.row1}>
-        <View style={[styles.subView1, styles.subviewArea]} />
-        <View style={[styles.subView2, styles.subviewArea]} />
-        <View style={[styles.subView3, styles.subviewArea]} />
-      </View>
+      <View style={[styles.subView]} />
     </View>
   );
 };
@@ -19,27 +15,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#ccc',
     height: '100%',
     width: '100%',
+    alignItems: 'center',
   },
-  row1: {
-    flexDirection: 'row',
-    width: '100%',
-    marginTop: '12%',
-  },
-  subviewArea: {
+  subView: {
+    width: 100,
     height: 100,
-  },
-  subView1: {
-    width: '25%',
-    backgroundColor: 'red',
-  },
-  subView2: {
-    width: '35%',
-    backgroundColor: 'blue',
-    borderWidth: 10,
-    borderColor: '#999',
-  },
-  subView3: {
-    width: '40%',
-    backgroundColor: 'yellow',
+    backgroundColor: '#222',
+    position: 'absolute',
+    top: 30,
+    left: 20,
   },
 });
