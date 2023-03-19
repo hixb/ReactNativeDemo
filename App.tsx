@@ -1,13 +1,13 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
-import TouchableOpacityDemo from './src/components/TouchableOpacityDemo';
+import TouchableHighlightDemo from './src/components/TouchableHighlightDemo';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
       <View style={styles.container}>
-        <TouchableOpacityDemo />
+        <TouchableHighlightDemo />
       </View>
     </SafeAreaView>
   );
